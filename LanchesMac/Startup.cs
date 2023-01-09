@@ -19,8 +19,12 @@ public class Startup
         services.AddDbContext<AppDbContext>(options => 
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+        services.AddMemoryCache();
+        services.AddSession();
+
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
         services.AddControllersWithViews();
     }
@@ -51,5 +55,7 @@ public class Startup
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
         });
+
+        app.UseSession();
     }
 }
