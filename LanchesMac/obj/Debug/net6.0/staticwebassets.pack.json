@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Full-Cart-icon.png",
+      "PackagePath": "staticwebassets\\images\\Full-Cart-icon.png"
+    },
+    {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel11.jpg",
       "PackagePath": "staticwebassets\\images\\carousel11.jpg"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel13.jpg",
       "PackagePath": "staticwebassets\\images\\carousel13.jpg"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\delete.png",
+      "PackagePath": "staticwebassets\\images\\delete.png"
     },
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\js\\site.js",
