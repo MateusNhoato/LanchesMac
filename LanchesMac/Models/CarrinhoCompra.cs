@@ -18,16 +18,16 @@ namespace LanchesMac.Models
         {
             // define uma sessão
             ISession session= services.GetService<IHttpContextAccessor>()?.HttpContext.Session;
-
+       
             //obtem um serviço do tipo do nosso contexto
             var context = services.GetService<AppDbContext>();
-
+       
             //obtem ou gera o Id do carrinho
             string carrinhoId = session.GetString("CarrinhoId") ?? Guid.NewGuid().ToString();
-
+       
             //atribui o id do carrinho na Sessão
             session.SetString("CarrinhoId", carrinhoId);
-
+       
             return new CarrinhoCompra(context)
             {
                 CarrinhoCompraId = carrinhoId

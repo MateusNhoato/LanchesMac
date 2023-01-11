@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ptky+TETkSAKKHwb8cUpE4dO3X6asuNu1EKhll03wtM=",
+  "Hash": "LuX0WuZdfFsk3/KjVrFdjTcD+ysS5iIBQ3cz2X0QXQM=",
   "Source": "LanchesMac",
   "BasePath": "_content/LanchesMac",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\images\\carousel13.jpg"
     },
     {
+      "Identity": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\cart-5-16.ico",
+      "SourceId": "LanchesMac",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\",
+      "BasePath": "_content/LanchesMac",
+      "RelativePath": "images/cart-5-16.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cart-5-16.ico"
+    },
+    {
       "Identity": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\delete.png",
       "SourceId": "LanchesMac",
       "SourceType": "Discovered",
@@ -151,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\delete.png"
+    },
+    {
+      "Identity": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Full-Cart-icon.ico",
+      "SourceId": "LanchesMac",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\",
+      "BasePath": "_content/LanchesMac",
+      "RelativePath": "images/Full-Cart-icon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Full-Cart-icon.ico"
     },
     {
       "Identity": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Full-Cart-icon.png",
