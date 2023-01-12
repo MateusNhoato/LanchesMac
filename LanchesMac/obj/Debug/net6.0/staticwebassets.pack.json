@@ -13,12 +13,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Envelope-icon24.png",
+      "PackagePath": "staticwebassets\\images\\Envelope-icon24.png"
+    },
+    {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Full-Cart-icon.ico",
       "PackagePath": "staticwebassets\\images\\Full-Cart-icon.ico"
     },
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Full-Cart-icon.png",
       "PackagePath": "staticwebassets\\images\\Full-Cart-icon.png"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\Home-iconred.png",
+      "PackagePath": "staticwebassets\\images\\Home-iconred.png"
     },
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel11.jpg",
@@ -39,6 +47,14 @@
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\delete.png",
       "PackagePath": "staticwebassets\\images\\delete.png"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\faleconosco1.jpg",
+      "PackagePath": "staticwebassets\\images\\faleconosco1.jpg"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\phone-app-icon.png",
+      "PackagePath": "staticwebassets\\images\\phone-app-icon.png"
     },
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\js\\site.js",
