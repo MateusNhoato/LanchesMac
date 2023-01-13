@@ -28,7 +28,20 @@ public class Startup
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddMemoryCache();
-       
+
+
+        services.Configure<IdentityOptions>(options =>
+        {
+            // configuração de senha fraca, para teste
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireDigit = false;
+            options.Password.RequireLowercase = false;
+            options.Password.RequireUppercase = false;
+            options.Password.RequiredLength = 3;
+            options.Password.RequiredUniqueChars = 1;
+        });
+
+
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddTransient<IPedidoRepository, PedidoRepository>();

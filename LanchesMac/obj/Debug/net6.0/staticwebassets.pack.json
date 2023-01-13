@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\Home-iconred.png"
     },
     {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\adminarea.jpg",
+      "PackagePath": "staticwebassets\\images\\adminarea.jpg"
+    },
+    {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\carousel11.jpg",
       "PackagePath": "staticwebassets\\images\\carousel11.jpg"
     },
@@ -53,8 +57,28 @@
       "PackagePath": "staticwebassets\\images\\faleconosco1.jpg"
     },
     {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\lanchevegano1.jpg",
+      "PackagePath": "staticwebassets\\images\\lanchevegano1.jpg"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\login1.jpg",
+      "PackagePath": "staticwebassets\\images\\login1.jpg"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\login_48.png",
+      "PackagePath": "staticwebassets\\images\\login_48.png"
+    },
+    {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\phone-app-icon.png",
       "PackagePath": "staticwebassets\\images\\phone-app-icon.png"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\registro1.jpg",
+      "PackagePath": "staticwebassets\\images\\registro1.jpg"
+    },
+    {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\remove.ico",
+      "PackagePath": "staticwebassets\\images\\remove.ico"
     },
     {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\js\\site.js",
