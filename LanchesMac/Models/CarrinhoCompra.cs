@@ -70,6 +70,9 @@ namespace LanchesMac.Models
             {
                 carrinhoCompraItem.Quantidade--;
                 quantidadeLocal = carrinhoCompraItem.Quantidade;
+
+                if (quantidadeLocal <= 0)
+                    _context.CarrinhoCompraItens.Remove(carrinhoCompraItem);
             }
             else
             {

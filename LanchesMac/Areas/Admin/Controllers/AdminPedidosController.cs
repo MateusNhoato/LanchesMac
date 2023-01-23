@@ -1,8 +1,10 @@
 ﻿using LanchesMac.Context;
 using LanchesMac.Models;
+using LanchesMac.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 
 namespace LanchesMac.Areas.Admin.Controllers
 {
@@ -18,10 +20,21 @@ namespace LanchesMac.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminPedidos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filter, int pageindex = 1, string sort = "Nome")
         {
-            return View(await _context.Pedidos.ToListAsync());
+            var resultado = _context.Pedidos
+                .AsNoTracking() // otimiza a consulta, no tracking é para os casos que não haverá alteração nos dados
+                .AsQueryable(); // retorna um tipo IQueryable, usado para fazer consultas
+
+            if (!string.IsNullOrEmpty(filter))
+                resultado = resultado.Where(p => p.Nome.Contains(filter));
+
+            var model = await PagingList.CreateAsync(resultado, 5, pageindex, sort, "Nome");
+
+            model.RouteValue = new RouteValueDictionary { { "filter", filter } };
+            return View(model);
         }
+
 
         // GET: Admin/AdminPedidos/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -154,6 +167,26 @@ namespace LanchesMac.Areas.Admin.Controllers
         private bool PedidoExists(int id)
         {
             return _context.Pedidos.Any(e => e.PedidoId == id);
+        }
+
+        public IActionResult PedidoLanches(int? id)
+        {
+            var pedido = _context.Pedidos
+                .Include(pd => pd.PedidoItens)
+                .ThenInclude(l => l.Lanche)
+                .FirstOrDefault(p => p.PedidoId == id);
+
+            if(pedido == null)
+            {
+                Response.StatusCode = 404;
+                return View("PedidoNotFound", id.Value);
+            }
+            PedidoLancheViewModel pedidoLanches = new PedidoLancheViewModel()
+            {
+                Pedido = pedido,
+                PedidoDetalhes = pedido.PedidoItens
+            };
+            return View(pedidoLanches);
         }
     }
 }

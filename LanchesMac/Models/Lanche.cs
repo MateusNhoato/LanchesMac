@@ -32,12 +32,12 @@ namespace LanchesMac.Models
         [Display(Name = "Caminho Imagem Norrmal")]
         [StringLength(200, ErrorMessage = "O {0} deve ter no máximo {1} caracteres")]
         public string ImagemThumbnailUrl { get; set; }
-        [Display(Name = "Preferido?")]
+        [Display(Name = "Preferido")]
         public bool IsLanchePreferido { get; set; }
         [Display(Name = "Estoque")]
         public bool EmEstoque { get; set; }
 
-
+        [Display(Name = "Categoria")]
         public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
 
