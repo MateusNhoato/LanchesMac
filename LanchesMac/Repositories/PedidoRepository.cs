@@ -13,7 +13,7 @@ namespace LanchesMac.Repositories
             CarrinhoCompra carrinhoCompra)
         {
             _appDbContext = appDbContext;
-            _carrinhoCompra= carrinhoCompra;
+            _carrinhoCompra = carrinhoCompra;
         }
 
 
@@ -24,7 +24,7 @@ namespace LanchesMac.Repositories
             _appDbContext.SaveChanges();
 
             var carrinhoCompraItens = _carrinhoCompra.CarrinhoCompraItens;
-            foreach(var carrinhoItem in carrinhoCompraItens)
+            foreach (var carrinhoItem in carrinhoCompraItens)
             {
                 var pedidoDetail = new PedidoDetalhe()
                 {

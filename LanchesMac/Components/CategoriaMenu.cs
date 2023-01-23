@@ -1,6 +1,4 @@
-﻿using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
-using LanchesMac.ViewModels;
+﻿using LanchesMac.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchesMac.Components
@@ -11,7 +9,7 @@ namespace LanchesMac.Components
 
         public CategoriaMenu(ICategoriaRepository categoriaRepository)
         {
-            _categoriaRepository= categoriaRepository;
+            _categoriaRepository = categoriaRepository;
         }
 
         public IViewComponentResult Invoke()

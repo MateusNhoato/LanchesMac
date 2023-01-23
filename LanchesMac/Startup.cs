@@ -2,6 +2,7 @@
 using LanchesMac.Models;
 using LanchesMac.Repositories;
 using LanchesMac.Repositories.Interfaces;
+using LanchesMac.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,7 +25,7 @@ public class Startup
             .AddDefaultTokenProviders();
 
         services.AddSession();
-        services.AddDbContext<AppDbContext>(options => 
+        services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddMemoryCache();
@@ -45,8 +46,17 @@ public class Startup
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddTransient<IPedidoRepository, PedidoRepository>();
-        services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp)); 
+        services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
+        services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy("Admin",
+                politica =>
+                {
+                    politica.RequireRole("Admin");
+                });
+        });
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -54,7 +64,9 @@ public class Startup
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app,
+        IWebHostEnvironment env,
+        ISeedUserRoleInitial seedUserRoleInitial)
     {
         if (env.IsDevelopment())
         {
@@ -75,18 +87,29 @@ public class Startup
         app.UseAuthentication();
         app.UseAuthorization();
 
+        //criar os perfis
+        seedUserRoleInitial.SeedRoles();
+        seedUserRoleInitial.SeedUsers();
+
+
         app.UseEndpoints(endpoints =>
         {
+
+            endpoints.MapControllerRoute(
+              name: "areas",
+              pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+
+
             endpoints.MapControllerRoute(
                 name: "categoriaFiltro",
                 pattern: "Lanche/{action}/{categoria?}",
-                defaults: new {Controller = "Lanche", action = "list"});
+                defaults: new { Controller = "Lanche", action = "list" });
 
             endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
         });
 
-        
+
     }
 }

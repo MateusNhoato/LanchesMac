@@ -13,35 +13,35 @@ namespace LanchesMac.Models
         public string CarrinhoCompraId { get; set; }
         public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
 
-       
+
         public static CarrinhoCompra GetCarrinho(IServiceProvider services)
         {
             // define uma sessão
-            ISession session= services.GetService<IHttpContextAccessor>()?.HttpContext.Session;
-       
+            ISession session = services.GetService<IHttpContextAccessor>()?.HttpContext.Session;
+
             //obtem um serviço do tipo do nosso contexto
             var context = services.GetService<AppDbContext>();
-       
+
             //obtem ou gera o Id do carrinho
             string carrinhoId = session.GetString("CarrinhoId") ?? Guid.NewGuid().ToString();
-       
+
             //atribui o id do carrinho na Sessão
             session.SetString("CarrinhoId", carrinhoId);
-       
+
             return new CarrinhoCompra(context)
             {
                 CarrinhoCompraId = carrinhoId
             };
         }
-        
+
         public void AdicionarAoCarrinho(Lanche lanche)
         {
             var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
                 s => s.Lanche.LancheId == lanche.LancheId &&
                 s.CarrinhoCompraId == CarrinhoCompraId);
 
-            
-            if(carrinhoCompraItem == null) 
+
+            if (carrinhoCompraItem == null)
             {
                 carrinhoCompraItem = new CarrinhoCompraItem
                 {
@@ -66,7 +66,7 @@ namespace LanchesMac.Models
 
             var quantidadeLocal = 0;
 
-            if(carrinhoCompraItem != null)
+            if (carrinhoCompraItem != null)
             {
                 carrinhoCompraItem.Quantidade--;
                 quantidadeLocal = carrinhoCompraItem.Quantidade;
@@ -81,7 +81,7 @@ namespace LanchesMac.Models
 
         public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
         {
-            return CarrinhoCompraItens ?? 
+            return CarrinhoCompraItens ??
                 (CarrinhoCompraItens =
                     _context.CarrinhoCompraItens
                     .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)

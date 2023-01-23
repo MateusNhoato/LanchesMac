@@ -9,7 +9,7 @@ namespace LanchesMac.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, 
+        public AccountController(UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
@@ -33,6 +33,7 @@ namespace LanchesMac.Controllers
 
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "Member");
                     return RedirectToAction("Login", "Account");
                 }
                 else
@@ -55,18 +56,18 @@ namespace LanchesMac.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginVM)
         {
-            if (!ModelState.IsValid)             
+            if (!ModelState.IsValid)
                 return View(loginVM);
-            
+
             var user = await _userManager.FindByNameAsync(loginVM.UserName);
 
-            if(user != null)
+            if (user != null)
             {
                 var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
 
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
-                    if(string.IsNullOrEmpty(loginVM.ReturnUrl))
+                    if (string.IsNullOrEmpty(loginVM.ReturnUrl))
                     {
                         return RedirectToAction("Index", "Home");
                     }
@@ -84,6 +85,11 @@ namespace LanchesMac.Controllers
             HttpContext.User = null;
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

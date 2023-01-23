@@ -11,7 +11,7 @@ namespace LanchesMac.Repositories
 
         public LancheRepository(AppDbContext context)
         {
-            _context = context;        
+            _context = context;
         }
 
         public IEnumerable<Lanche> Lanches => _context.Lanches.
