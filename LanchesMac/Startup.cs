@@ -29,9 +29,9 @@ public class Startup
         services.AddSession();
         services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
         services.AddMemoryCache();
 
+        services.Configure<ConfigurationImagens>(Configuration.GetSection("ConfigurationPastaImagens"));
 
         services.Configure<IdentityOptions>(options =>
         {
@@ -50,6 +50,7 @@ public class Startup
         services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
         services.AddScoped<RelatorioVendasService>();
+        services.AddScoped<GraficoVendasService>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
         services.AddAuthorization(options =>
