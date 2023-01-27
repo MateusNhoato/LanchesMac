@@ -2,7 +2,7 @@
 Projeto feito durante o curso "ASP .NET Core MVC - Criando um Site do Zero" do professor Macoratti.
 
 ## Tabela de Conteúdo
-- [Projeto](#lanches-mac--)
+- [Projeto](#lanches-mac-)
 - [Descrição](#descrição)
 - [Demonstração](#demonstração)
 - [Tecnologias](#tecnologias)
