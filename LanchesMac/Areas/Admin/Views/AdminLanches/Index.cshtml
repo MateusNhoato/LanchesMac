@@ -12,10 +12,14 @@
     <button type="submit" class="btn btn-info"> Procurar</button>
 </form>
 
-
-<p>
-    <a asp-action="Create">Adicionar Produto</a>
-</p>
+<div class="row">
+    <div class="col-md-12">
+    <a asp-action="Create">Adicionar Produto</a> |
+    <a asp-controller="AdminLanchesReport" asp-action="LanchesCategoriaReport">Gerar Relatório</a> |
+    <a asp-controller="AdminLanchesReport" asp-action="LanchesCategoriaPDF">Gerar PDF</a> 
+    
+    </div>
+</div>
 
 Total de Produtos : @Model.TotalRecordCount
 <div class="row">

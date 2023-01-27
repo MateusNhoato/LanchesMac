@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/27/2023 08:22:36" ReportInfo.Modified="01/27/2023 08:42:20" ReportInfo.CreatorVersion="2023.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq2UO+9iIac+jzZChHNBz2pHAwckF+KO2R+zX5lgXw1VOtQhMd5z2G6yRQ7/HyGPa4qpxhIGZYlMiIfyoZl93rJHby2sFB2fyi3QDprP1A8/+dLnhqN7R/sAXxUzOFIsEK0akIeV+gJ+yKMDcLIWh+N/M5mZrIahtgz7OblRdw2gfpE6uJHbaBGkQsNIGbTmuw7AIhFBydWf86CBFSgeQ8Ng==">
+      <TableDataSource Name="Categorias" DataType="System.Int32" Enabled="true" TableName="Categorias">
+        <Column Name="CategoriaId" DataType="System.Int32"/>
+        <Column Name="CategoriaNome" DataType="System.String"/>
+        <Column Name="Descricao" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="Lanches" DataType="System.Int32" Enabled="true" TableName="Lanches">
+        <Column Name="LancheId" DataType="System.Int32"/>
+        <Column Name="Nome" DataType="System.String"/>
+        <Column Name="DescricaoCurta" DataType="System.String"/>
+        <Column Name="DescricaoDetalhada" DataType="System.String"/>
+        <Column Name="Preco" DataType="System.Decimal"/>
+        <Column Name="ImagemUrl" DataType="System.String"/>
+        <Column Name="ImagemThumbnailUrl" DataType="System.String"/>
+        <Column Name="IsLanchePreferido" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="EmEstoque" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="CategoriaId" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Relation Name="Categorias_Lanches" ParentDataSource="Categorias" ChildDataSource="Lanches" ParentColumns="CategoriaId" ChildColumns="CategoriaId" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text9" Left="189" Top="9.45" Width="311.85" Height="18.9" Text="Lanches por Categoria" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="75.6" Fill.Color="Aquamarine" StartNewPage="true" DataSource="Categorias">
+      <TextObject Name="Text1" Width="189" Height="18.9" Text="[Categorias.CategoriaNome]" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text2" Left="207.9" Width="160.65" Height="18.9" Text="[Categorias.Descricao]" Font="Arial, 10pt"/>
+      <DataBand Name="Data2" Top="163.2" Width="718.2" Height="75.6" DataSource="Lanches">
+        <TextObject Name="Text5" Left="340.2" Width="122.85" Height="18.9" Text="[Lanches.Preco]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text7" Left="151.2" Width="170.1" Height="18.9" Text="[Lanches.DescricaoCurta]" Font="Arial, 10pt"/>
+        <TextObject Name="Text8" Left="-37.8" Width="141.75" Height="18.9" Text="[Lanches.Nome]" HorzAlign="Right" Font="Arial, 10pt"/>
+        <PictureObject Name="Picture1" Left="567" Width="75.6" Height="75.6" DataColumn="Lanches.ImagemUrl"/>
+        <DataHeaderBand Name="DataHeader1" Top="121.4" Width="718.2" Height="37.8">
+          <TextObject Name="Text6" Left="340.2" Top="9.45" Width="94.5" Height="18.9" Text="Preco" HorzAlign="Right" Font="Arial, 10pt"/>
+          <TextObject Name="Text4" Left="151.2" Top="9.45" Width="113.4" Height="18.9" Text="DescricaoCurta" Font="Arial, 10pt"/>
+          <TextObject Name="Text3" Left="9.45" Top="9.45" Width="85.05" Height="18.9" Text="Nome" Font="Arial, 10pt"/>
+        </DataHeaderBand>
+      </DataBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="242.8" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\images\\login_48.png"
     },
     {
+      "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
       "Id": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\negado1.jpg",
       "PackagePath": "staticwebassets\\images\\negado1.jpg"
     },

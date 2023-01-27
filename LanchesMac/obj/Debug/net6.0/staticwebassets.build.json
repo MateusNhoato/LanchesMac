@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dtNxvaf2IRswpFp31LGMTkE768ijea9q7TZv5icr2BI=",
+  "Hash": "e+dLhoFX7KhpznJPwwpl2F6/5OAugJUIm4R3qe9VDtM=",
   "Source": "LanchesMac",
   "BasePath": "_content/LanchesMac",
   "Mode": "Default",
@@ -338,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\login1.jpg"
+    },
+    {
+      "Identity": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\logo.png",
+      "SourceId": "LanchesMac",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\",
+      "BasePath": "_content/LanchesMac",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "D:\\projetos_C#\\LanchesMac\\LanchesMac\\wwwroot\\images\\negado1.jpg",
